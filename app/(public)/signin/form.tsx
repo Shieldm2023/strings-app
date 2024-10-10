@@ -21,17 +21,21 @@ function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <h3>Sign In</h3>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-2 p-5 max-w-xs w-full bg-slate-800 rounded-lg"
+    >
+      <div className="text-center">
+        <h3 className="font-semibold">Sign In</h3>
       </div>
-      <div>
+      <div className="my-3">
         <hr />
       </div>
       <div>
-        <div>
+        <div className="flex flex-col gap-2">
           <label>Username</label>
           <input
+            className="text-black p-3 border border-slate-700 rounded-lg"
             type="text"
             onChange={(e) => setUsername(e.target.value)}
             value={username}
@@ -40,19 +44,25 @@ function Form() {
             required
           />
         </div>
+        <div className="flex flex-col gap-2 my-4">
+          <label>Password</label>
+          <input
+            className="text-black p-3 border border-slate-700 rounded-lg"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
       </div>
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          id="password"
-          placeholder="Password"
-          required
-        />
-      </div>
-      <button type="submit">Sign In</button>
+      <button
+        type="submit"
+        className="mt-4 bg-slate-900 text-white p-3 rounded-lg"
+      >
+        Sign In
+      </button>
     </form>
   );
 }
