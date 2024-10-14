@@ -13,9 +13,11 @@ function Form() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setErrors([]);
-    if(password != confirmPassword){
-        errors.push("Passwords do not match."):
-        return;
+    if (password != confirmPassword) {
+      const error = "Passwords do not match.";
+      alert(error);
+      errors.push(error);
+      return;
     }
 
     const res = await fetch("/api/signup", {
@@ -23,7 +25,7 @@ function Form() {
       body: JSON.stringify({ username, password }),
     });
     if (res.ok) {
-      window.location.href = "/feed";
+      window.location.href = "/signin";
     } else {
       alert("sign up failed");
     }
