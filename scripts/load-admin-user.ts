@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { getClient } from "./dbConnection";
+import { getClient } from "../dbConnection";
 import bcrypt from "bcrypt";
 
 async function loadAdminUser(username: string, password: string) {

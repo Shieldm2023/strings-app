@@ -1,4 +1,4 @@
-import { getClient } from "./dbConnection";
+import { getClient } from "../dbConnection";
 import { faker } from "@faker-js/faker";
 import bcrypt from "bcrypt";
 

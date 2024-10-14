@@ -1,5 +1,5 @@
 import { getJWTPayload } from "@/app/util/auth";
-import { sql } from "@/scripts/dbConnection";
+import { sql } from "@/dbConnection";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {

@@ -1,4 +1,4 @@
-import { sql } from "@/scripts/dbConnection";
+import { sql } from "@/dbConnection";
 import { faker } from "@faker-js/faker";
 import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
