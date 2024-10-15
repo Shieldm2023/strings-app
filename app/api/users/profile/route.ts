@@ -2,7 +2,7 @@ import { getJWTPayload } from "@/app/util/auth";
 import { sql } from "@/dbConnection";
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET() {
   //Get currently logged in user
   const jwtPayload = await getJWTPayload();
   //fetch user data
