@@ -9,7 +9,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      // @ts-ignore
+      // @ts-expect-error
       if (ref.current && !ref.current.contains(e.target)) {
         setVisible(false);
       }
