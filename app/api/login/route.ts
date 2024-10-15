@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     .sign(new TextEncoder().encode(process.env.JWT_SECRET));
   const response = NextResponse.json({ msg: "login success" });
   response.cookies.set("jwt-token", token, {
-    sameSite: "strict",
+    sameSite: "none",
     httpOnly: true,
     secure: true,
   });
