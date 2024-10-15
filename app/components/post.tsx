@@ -11,6 +11,13 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
   };
 
   const createdAt = new Date(post.created_at);
+
+  // Truncate the post content to 400 characters
+  const truncatedContent =
+    post.content.length > 400
+      ? post.content.substring(0, 400) + "..."
+      : post.content;
+
   return (
     <div className="flex flex-row">
       <div>
@@ -39,7 +46,7 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
         <div className="dark:text-slate-400 text-slate-600">
           {createdAt.toLocaleDateString("en-us", options)}
         </div>
-        <div>{post.content}</div>
+        <div className="text-sm break-words max-w-full">{truncatedContent}</div>
       </div>
       {showEditBtn && (
         <div className="text-right flex-grow">
