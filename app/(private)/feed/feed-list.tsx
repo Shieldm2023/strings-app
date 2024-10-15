@@ -1,8 +1,21 @@
 import Post from "@/app/components/post";
 import useSWR from "swr";
+const followingView = true;
+function FeedList({
+  index,
+  followingView,
+}: {
+  index: number;
+  followingView: boolean;
+}) {
+  const { data, error, isLoading } = useSWR(
+    followingView
+      ? `/api/posts/feed?page=${index}`
+      : `/api/posts/publicfeed?page=${index}`
+  );
 
-function FeedList({ index }: { index: number }) {
-  const { data, error, isLoading } = useSWR("/api/posts/feed?page=" + index);
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;

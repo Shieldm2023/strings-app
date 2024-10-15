@@ -31,7 +31,7 @@ export default function AvatarForm() {
       )}
       <Link
         href="/avatar/upload"
-        className="dark:text-green-400 text-green-800 underline p-2 rounded-lg my-5"
+        className="dark:text-rose-400 text-rose-800 underline p-2 rounded-lg my-5"
       >
         Update Avatar
       </Link>

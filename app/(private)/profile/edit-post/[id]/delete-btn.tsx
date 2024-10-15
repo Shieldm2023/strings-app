@@ -24,7 +24,7 @@ export default function DeleteBtn({ post }: { post: PostI }) {
   return (
     <div>
       {!state.showConfirm && (
-        <button className="text-red-400" onClick={handleClick}>
+        <button className="text-rose-800" onClick={handleClick}>
           Delete Post
         </button>
       )}

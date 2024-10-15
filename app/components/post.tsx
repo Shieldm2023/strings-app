@@ -52,7 +52,7 @@ function Post({ post, showEditBtn }: { post: PostI; showEditBtn?: boolean }) {
         <div className="text-right flex-grow">
           <Link
             href={`/profile/edit-post/${post.id}`}
-            className="dark:text-green-400 text-green-800"
+            className="dark:text-rose-400 text-rose-800"
           >
             Edit
           </Link>
