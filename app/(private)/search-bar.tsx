@@ -9,7 +9,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      // @ts-expect-error
+      //@ts-expect-error: TS doesn't recognize ref.current contains check, but it should work as intended
       if (ref.current && !ref.current.contains(e.target)) {
         setVisible(false);
       }
