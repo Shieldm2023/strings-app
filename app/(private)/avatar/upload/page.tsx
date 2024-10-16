@@ -37,7 +37,20 @@ export default function AvatarUploadPage() {
       </form>
       {blob && (
         <div>
-          Blob url: <a href={blob.url}>{blob.url}</a>
+          {}
+          <img
+            src={blob.url}
+            alt="Uploaded Blob"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+
+          {}
+          <div>
+            Blob URL:{" "}
+            <a href={blob.url} target="_blank" rel="noopener noreferrer">
+              {blob.url}
+            </a>
+          </div>
         </div>
       )}
     </>
