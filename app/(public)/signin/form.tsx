@@ -10,7 +10,7 @@ function Form() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const res = await fetch("/api/login", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({ username, password }),
     });
     if (res.ok) {
@@ -23,7 +23,7 @@ function Form() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 p-5 max-w-xs w-full bg-slate-800 rounded-lg"
+      className="flex flex-col gap-2 p-5 max-w-xs w-full dark:bg-slate-800 bg-slate-800 rounded-lg"
     >
       <div className="text-center">
         <h3 className="font-semibold">Sign In</h3>
@@ -44,22 +44,22 @@ function Form() {
             required
           />
         </div>
-        <div className="flex flex-col gap-2 my-4">
-          <label>Password</label>
-          <input
-            className="text-black p-3 border border-slate-700 rounded-lg"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-            id="password"
-            placeholder="Password"
-            required
-          />
-        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <label>Password</label>
+        <input
+          className="text-black p-3 border border-slate-700 rounded-lg"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          id="password"
+          placeholder="Password"
+          required
+        />
       </div>
       <button
         type="submit"
-        className="mt-4 bg-slate-900 text-white p-3 rounded-lg"
+        className="mt-4 dark:bg-slate-900 bg-slate-900 text-white p-3 rounded-lg"
       >
         Sign In
       </button>
