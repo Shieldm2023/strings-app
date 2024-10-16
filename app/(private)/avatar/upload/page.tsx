@@ -28,8 +28,7 @@ export default function AvatarUploadPage() {
 
           const newBlob = (await response.json()) as PutBlobResult;
           router.push("/account");
-
-          // setBlob(newBlob);
+          window.location.reload();
         }}
       >
         <input name="file" ref={inputFileRef} type="file" required />
