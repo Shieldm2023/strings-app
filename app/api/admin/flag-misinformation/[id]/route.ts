@@ -13,9 +13,9 @@ export async function PATCH(
       "update posts set is_misinformation = true, is_misinformation_flagged_at = now() where id = $1",
       [id]
     );
-    await sql("delete from posts where is_misinformation = true");
+    /*await sql("delete from posts where is_misinformation = true");*/
     return NextResponse.json({
-      msg: `misinformation post deleted`,
+      msg: `misinformation post flagged`,
     });
   });
 }
